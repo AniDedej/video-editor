@@ -1,0 +1,232 @@
+body {
+    font: 14px arial;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(226, 226, 226);
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+h2 {
+    color: white;
+}
+
+h4 {
+    text-align: center;
+    background-color: rgb(201, 200, 200);
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+a {
+    color: #F93;
+}
+
+.invisible {
+    display: none;
+}
+
+.flex--wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex--column {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.play_pauseBorder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/play_pauseBorder.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.play_pauseBorderHover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/play_pauseBorderHover.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.rotate {
+    transform: rotate(360deg);
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.rotateReverse {
+    transform: rotate(0deg);
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.playIcon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/playIcon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.playIconHover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/playIconHover.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.pauseIcon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pauseIcon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.pauseIconHover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pauseIconHover.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#playPauseContainer {
+    position: relative;
+    margin: 1%;
+    width: 30px;
+    height: 30px;
+}
+
+#playPauseContainer:hover {
+    cursor: pointer;
+}
+
+#seek-bar {
+    margin: 0;
+    flex: 14;
+}
+
+#mute {
+    margin: 1%;
+}
+
+#volume-bar {
+    margin: 0;
+}
+
+#full-screen {
+    margin: 1%;
+}
+
+.mute {
+    cursor: pointer;
+    display: initial;
+}
+
+.videoSourceContainer {
+    text-align: center;
+}
+
+.preview {
+    margin-top: 0.5%;
+    color: #ce4958;
+}
+
+.preview p,
+ol {
+    margin: 0;
+}
+
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.videoSubContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+    justify-content: center;
+}
+
+.bttn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vmax;
+    color: #f4e8ff;
+    background-color: #4968ce;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bttn:active {
+    background-color: #e0818d;
+    box-shadow: #4e4e4e 1px 1px 5px 0px;
+}
+
+#videoSource {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#videoSourceLabel {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1%;
+    font-size: 1.2vmax;
+    color: #f4e8ff;
+    background-color: #ce4958;
+}
+
+#videoSourceLabel:active {
+    background-color: #e0818d;
+    box-shadow: #4e4e4e 1px 1px 5px 0px;
+}
+
+#c_vid_2 {
+    position: relative;
+}
+
+#video-controls {
+    bottom: 0;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+#filter-controllers {
+    background-color: rgb(226, 226, 226);
+}

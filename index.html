@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video Editor</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <input type="file" name="videoSource" id="videoSource" 
+        accept=".mp4, .avi, .wmv, .webm">
+        <div class="videoSourceContainer">
+            <label for="videoSource" id="videoSourceLabel">Upload a video...</label>
+            <div class="preview">
+                <p>No video currently selected for upload</p>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Video Effects -->
+            <div class="row col-3 m-0 p-0 bg-dark" id="video-filters">
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="normal_bttn">Normal</div>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="grayScale_bttn">Black&White</div>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="pixelated_bttn">Pixelated</div>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="invertColors_bttn">Invert Colors</div>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="edges_bttn">Edges</div>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="blur_bttn">Blur</div>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="noise_bttn">Noise</div>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="button_selected bttn" id="adjustColors_bttn">Adjust Colors</div>
+                </div>
+                
+            </div>
+            <div class="col-7 m-0 p-0"> 
+                <video style="display:none" id="vid_1">
+                    <p>Your browser doesn't support HTML5 video. Download the video instead.</p>
+                </video>
+                <canvas style="display:none" id=c_vid_1 width="860" height="480"></canvas>
+                <div id="videoContainer" class="videoContainer">
+                    <div id="videoSubContainer" class="videoSubContainer">
+                        <canvas id=c_vid_2 width="860" height="480"></canvas>
+                        <!-- Video Controls -->
+                        <div id="video-controls">
+                            <div id="playPauseContainer">
+                                <div id="playPauseBorder" class="play_pauseBorder"></div>
+                                <div id="play-pause" class="playIcon"></div>
+                            </div>
+                            <!--<button class="play" type="button" id="play-pause">Play</button>-->
+                            <input type="range" id="seek-bar" value="0">
+                            <button type="button" id="mute">Mute</button>
+                            <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.67">
+                            <button type="button" id="full-screen">Full-Screen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 m-0 p-0 d-flex flex-column" id="filter-controllers">
+                <h4>Filter Controller</h4>
+                <div id="pixelatedControllers" class="d-flex p-3 flex-column">
+                    <input class="w-100" type="number" name="pixelatedValue" id="pixelatedValue" placeholder="Ex: 20" min="1" value="20">
+                    <input type="button" value="OK!" id="pixelatedSubmit">
+                </div>
+                <div id="adjustColorSliders" class="d-flex p-3 flex-column">
+                    <label for="red">Red</label>
+                    <input class="w-100" type="range" name="red" id="red" min="0" max="127.5" step="0.001" value="0" onchange="changeColors();">
+                    <label for="green">Green</label>
+                    <input class="w-100" type="range" name="green" id="green" min="0" max="127.5" step="0.001" value="0" onchange="changeColors();">
+                    <label for="blue">Blue</label>
+                    <input class="w-100" type="range" name="blue" id="blue" min="0" max="127.5" step="0.001" value="0" onchange="changeColors();">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
